@@ -1,0 +1,39 @@
+#!/bin/bash
+
+COMMIT_MSG=
+while [ $# -ne 0 ]; do
+  case $1 in
+    -a) AMEND=true;;
+    -A) AMEND=true; NOEDIT=true;;
+    -*) :;;
+    *) COMMIT_MSG="$1";;
+  esac
+  shift
+done
+
+if [ -n "$AMEND" ]; then
+  PUSH_FORCE=true
+fi
+
+#----------
+C_ARG=""
+P_ARG=""
+if [ -n "$AMEND" ]; then
+  C_ARG="$C_ARG --amend"
+fi
+if [ -n "$NOEDIT" ]; then
+  C_ARG="$C_ARG --no-edit"
+fi
+
+if [ -n "$PUSH_FORCE" ]; then
+  P_ARG="$P_ARG --force"
+fi
+
+git add --all
+if [ -n "$COMMIT_MSG" ]; then
+  git commit $C_ARG --message "$COMMIT_MSG"
+else
+  git commit $C_ARG
+fi
+echo # Create a blank line
+git push $P_ARG
