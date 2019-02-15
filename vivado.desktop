@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Vivado 2018.2
+Exec=/opt/Xilinx/Vivado/2018.2/bin/vivado -nojournal -nolog
+Icon=/opt/Xilinx/Vivado/2018.2/doc/images/vivado_logo.png
+Terminal=false
+Type=Application
