@@ -20,10 +20,10 @@ format = columns
 %
 
 # Vimrc
-wget https://ibug.github.io/ext/conf/vimrc -O ~/.vimrc
+wget -q https://ibug.github.io/ext/conf/vimrc -O ~/.vimrc &
 
 # Git Config
-echo "Your GitHub username? (Leave blank if you don't have one)"
+echo "Your GitHub username? (Leave blank if you don't have one, used in later configuration)"
 read -p "> " GH_USER
 cat > ~/.gitconfig << %
 [push]
