@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # APT config first
 SOURCES="/etc/apt/sources.list"
@@ -10,6 +10,9 @@ export DEBIAN_FRONTEND=noninteractive
 sudo apt update
 sudo apt -y full-upgrade
 sudo apt -y install vim xxd build-essential python3-pip git openssh-client wget curl
+if dmesg | grep -qi Hypervisor; then
+  sudo apt -y install open-vm-tools
+fi
 unset DEBIAN_FRONTEND
 
 # Python PIP
