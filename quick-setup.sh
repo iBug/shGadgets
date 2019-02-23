@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Prompt first
+echo "Your GitHub username? (Leave blank if you don't have one, used in later configuration)"
+read -p "> " GH_USER
+
 # APT config first
 SOURCES="/etc/apt/sources.list"
 sudo sed -Ei 's/([a-z]*\.)?archive\.ubuntu\.com/mirrors.ustc.edu.cn/g' "$SOURCES"
@@ -17,7 +21,7 @@ fi
 unset DEBIAN_FRONTEND
 
 # Python PIP
-cat > /etc/pip.conf << %
+sudo tee /etc/pip.conf > /dev/null << %
 [global]
 index-url = https://mirrors.ustc.edu.cn/pypi/web/simple
 format = columns
@@ -27,8 +31,6 @@ format = columns
 wget -q https://ibug.github.io/ext/conf/vimrc -O ~/.vimrc &
 
 # Git Config
-echo "Your GitHub username? (Leave blank if you don't have one, used in later configuration)"
-read -p "> " GH_USER
 cat > ~/.gitconfig << %
 [push]
     default = simple
