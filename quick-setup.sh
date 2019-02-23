@@ -84,3 +84,5 @@ if [ -d ~/.bundle ]; then
 BUNDLE_MIRROR__HTTPS://RUBYGEMS__ORG/: "https://mirrors.ustc.edu.cn/rubygems/"
 %
 fi
+
+wait # wait for tasks to complete
