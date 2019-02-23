@@ -4,6 +4,7 @@
 SOURCES="/etc/apt/sources.list"
 sudo sed -Ei 's/([a-z]*\.)?archive\.ubuntu\.com/mirrors.ustc.edu.cn/g' "$SOURCES"
 sudo sed -Ei 's/security\.ubuntu\.com/mirrors.ustc.edu.cn/g' "$SOURCES"
+sudo sed -Ei 's/http:/https:/g' "$SOURCES"
 
 # APT Packages
 export DEBIAN_FRONTEND=noninteractive
