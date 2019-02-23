@@ -2,7 +2,7 @@
 
 # APT config first
 SOURCES="/etc/apt/sources.list"
-sudo sed -Ei 's/(cn\.)?archive\.ubuntu\.com/mirrors.ustc.edu.cn/g' "$SOURCES"
+sudo sed -Ei 's/([a-z]*\.)?archive\.ubuntu\.com/mirrors.ustc.edu.cn/g' "$SOURCES"
 sudo sed -Ei 's/security\.ubuntu\.com/mirrors.ustc.edu.cn/g' "$SOURCES"
 
 # APT Packages
