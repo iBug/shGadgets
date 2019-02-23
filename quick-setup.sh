@@ -73,6 +73,7 @@ if which gem &>/dev/null; then
 :update_sources: true
 :verbose: true
 %
+fi
 
 if [ -d ~/.bundle ]; then
   # This guy has Ruby Bundler
