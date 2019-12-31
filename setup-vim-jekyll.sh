@@ -10,7 +10,7 @@ if [ $(id -u) -eq 0 ]; then
   if [ -d /etc/vim ]; then
     TARGET=/etc/vim
   else
-    for f in 72 73 74 80 81; do
+    for f in 82 81 80 74 73 72; do
       TARGET=/usr/share/vim/vim$f
       if [ -d "$TARGET" ]; then
         break;

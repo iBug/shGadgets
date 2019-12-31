@@ -4,7 +4,7 @@ SRC="https://github.com/nginx/nginx/raw/master/contrib/vim"
 FILE="nginx.vim"
 
 if [ $(id -u) -eq 0 ]; then
-  for f in 72 73 74 80 81; do
+  for f in 82 81 80 74 73 72; do
     TARGET=/usr/share/vim/vim$f
     if [ -d "$TARGET" ]; then
       break;
