@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SRC="https://github.com/gisphm/vim-gitignore/raw/master"
+SRC="https://cdn.jsdelivr.net/gh/gisphm/vim-gitignore"
 FILE="gitignore.vim"
 
 if [ $(id -u) -eq 0 ]; then

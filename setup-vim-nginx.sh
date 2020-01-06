@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SRC="https://github.com/nginx/nginx/raw/master/contrib/vim"
+SRC="https://cdn.jsdelivr.net/gh/nginx/nginx/contrib/vim"
 FILE="nginx.vim"
 
 if [ $(id -u) -eq 0 ]; then
