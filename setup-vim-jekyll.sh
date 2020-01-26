@@ -1,7 +1,7 @@
 #!/bin/bash
 set -x
 
-SRC="https://cdn.jsdelivr.net/gh/tpope/vim-liquid"
+SRC="https://cdn.jsdelivr.net/gh/iBug/vim-liquid"
 FILE=liquid.vim
 
 if [ $(id -u) -eq 0 ]; then
