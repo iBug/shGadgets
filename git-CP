@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Git-My-Cherry-Pick
+#
+# Like `git cherry-pick`, but only applies the differences
