@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ -z "$TRAVIS_TOKEN" ]; then
+  echo "Travis CI token not set!" >&2
+  exit 1
+fi
+
+REPO="$1"
+if [ -z "$REPO" ]; then
+  REPO="iBug/iBug-source"
+fi
+
+body='{"request": {"branch": "master"}}'
+exec curl -s -X POST \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -H "Travis-API-Version: 3" \
+  -H "Authorization: token $TRAVIS_TOKEN" \
+  -d "$body" \
+  "https://api.travis-ci.org/repo/${REPO//\//%2F}/requests"
