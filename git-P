@@ -20,6 +20,7 @@ C_ARG=""
 P_ARG=""
 if [ -n "$AMEND" ]; then
   C_ARG="$C_ARG --amend"
+  export GIT_COMMITTER_DATE="$(git log -1 --pretty=tformat:%cD)"
 fi
 if [ -n "$NOEDIT" ]; then
   C_ARG="$C_ARG --no-edit"
