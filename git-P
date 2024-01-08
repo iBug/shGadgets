@@ -36,5 +36,6 @@ if [ -n "$COMMIT_MSG" ]; then
 else
   git commit $C_ARG
 fi
+test $? -eq 0 || exit $?
 echo # Create a blank line
 git push $P_ARG
